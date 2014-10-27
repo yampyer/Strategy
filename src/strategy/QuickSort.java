@@ -1,6 +1,6 @@
 package strategy;
 
-public class QuickSort implements StrategySort {
+public class QuickSort implements Strategy {
     
     public static void quickSort(int[] arr, int low, int high) {
 
@@ -33,7 +33,7 @@ public class QuickSort implements StrategySort {
     }
 
     @Override
-    public String sorter(int n, int[] arr) {
+    public String execute(int n, int[] arr) {
         int low = 0;
         int high = arr.length - 1;
 

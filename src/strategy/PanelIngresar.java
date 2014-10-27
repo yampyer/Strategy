@@ -1,6 +1,8 @@
 package strategy;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -8,12 +10,11 @@ public class PanelIngresar extends JPanel {
     private JLabel lblTexto;
     private JTextArea txtTexto;
     private JScrollPane scrollPane;
-    private String texto;
-    private Strategy principal;
+    private Main principal;
     private String[] algorithmOptions = { "Seleccione un sort", "BubbleSort", "QuickSort", "HeapSort" };
     private JComboBox algorithm;
     
-    public PanelIngresar(Strategy principal) {
+    public PanelIngresar(Main principal) {
         this.principal = principal;
         
         setBackground(Color.decode("#FFFFFF"));
@@ -31,6 +32,15 @@ public class PanelIngresar extends JPanel {
         algorithm.setBounds(35, 60, 140, 30);
         
         txtTexto = new JTextArea();
+        txtTexto.setToolTipText("Ingrese un conjunto de números separados por espacios, comas, puntos o nuevas lineas");
+        txtTexto.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char caracter = e.getKeyChar();
+                if(((caracter < '0') || (caracter > '9')) && (caracter != '\b') 
+                        && (caracter != ' ') && (caracter != '\n')
+                        && (caracter != '.') && (caracter != ',')) e.consume(); 
+            }
+        });
         
         scrollPane = new JScrollPane();
         scrollPane.setViewportView(txtTexto);

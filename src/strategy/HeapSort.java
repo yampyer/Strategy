@@ -1,6 +1,6 @@
 package strategy;
 
-public class HeapSort implements StrategySort {
+public class HeapSort implements Strategy {
     private static int[] a;
     private static int n;
     private static int left;
@@ -45,7 +45,7 @@ public class HeapSort implements StrategySort {
     }
 
     @Override
-    public String sorter(int n, int[] arr) {
+    public String execute(int n, int[] arr) {
         sort(arr);
         String res = "";
         for (int c : arr) res += c + " ";

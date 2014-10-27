@@ -9,9 +9,9 @@ public class PanelOutput extends JPanel {
     private JTextArea resultado = new JTextArea();
     private String res;
     private JScrollPane scrollPanell = new JScrollPane();
-    private Strategy principal;
+    private Main principal;
     
-    public PanelOutput(Strategy principal){
+    public PanelOutput(Main principal){
         setBackground(Color.WHITE);
         setLayout(new BorderLayout());
         TitledBorder border = BorderFactory.createTitledBorder("Output");

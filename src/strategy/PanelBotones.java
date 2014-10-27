@@ -12,9 +12,9 @@ public class PanelBotones extends JPanel implements ActionListener
     
     private JButton btnOrdenar;
     private JButton btnLimpiar;
-    private Strategy principal;
+    private Main principal;
 
-    public PanelBotones(Strategy principal)
+    public PanelBotones(Main principal)
     {
         setBackground(Color.decode("#FFFFFF"));
         setLayout(new GridLayout(0, 2));
